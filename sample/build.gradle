@@ -1,18 +1,25 @@
 apply plugin: 'com.android.application'
 
 android {
+  namespace = "com.orhanobut.sample"
   compileSdkVersion rootProject.ext.compileSdkVersion
-  buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
     applicationId "com.orhanobut.sample"
     minSdkVersion 23
-    targetSdkVersion 27
+    targetSdkVersion 34
     versionCode 1
     versionName "1.0"
 
     testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+  kotlinOptions {
+    jvmTarget = "17"
   }
 }
 

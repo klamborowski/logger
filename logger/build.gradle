@@ -2,11 +2,19 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+  namespace = "com.orhanobut.logger"
   compileSdkVersion rootProject.ext.compileSdkVersion
-  buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
     minSdkVersion rootProject.ext.minSdkVersion
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+  kotlinOptions {
+    jvmTarget = "17"
   }
 
   lintOptions {
@@ -30,4 +38,4 @@ dependencies {
   testImplementation deps.kotlin
 }
 
-apply from: rootProject.file('gradle/maven_push.gradle')
+//apply from: rootProject.file('gradle/maven_push.gradle')

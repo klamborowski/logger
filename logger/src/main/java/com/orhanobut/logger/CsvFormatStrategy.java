@@ -1,8 +1,11 @@
 package com.orhanobut.logger;
 
+import static com.orhanobut.logger.Utils.checkNotNull;
+
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -10,8 +13,6 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
-import static com.orhanobut.logger.Utils.checkNotNull;
 
 /**
  * CSV formatted file logging for Android.
@@ -52,7 +53,7 @@ public class CsvFormatStrategy implements FormatStrategy {
     StringBuilder builder = new StringBuilder();
 
     // machine-readable date/time
-    builder.append(Long.toString(date.getTime()));
+    builder.append(date.getTime());
 
     // human-readable date/time
     builder.append(SEPARATOR);
